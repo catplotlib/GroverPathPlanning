@@ -1,6 +1,0 @@
-[console_scripts]
-astar_node = astar_planner.astar_node:main
-grover_node = astar_planner.grover_node:main
-occupancy_grid_node = astar_planner.occupancy_grid_node:main
-path_follower_node = astar_planner.path_follower_node:main
-
