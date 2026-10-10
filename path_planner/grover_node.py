@@ -29,10 +29,8 @@ class GroverPathPlanner(Node):
         self.goal_state = self.costmap.info.width - 1
 
     def is_valid_state(self, state):
-        x = state // self.costmap.info.width
-        y = state % self.costmap.info.width
-        index = x * self.costmap.info.width + y
-        return self.costmap.data[index] == 0
+        # state is already the row-major index into costmap.data.
+        return self.costmap.data[state] == 0
 
     def find_path_grover(self, start_state, goal_state):
         valid_states = [state for state in range(self.costmap.info.width * self.costmap.info.height) if self.is_valid_state(state)]
